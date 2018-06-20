@@ -5,7 +5,7 @@ import json
 positive = ["ja", "jaa", "uhu", "yes", "y", "yeah", "jup"]
 negative = ["nope", "neen", "n", "no", "noppes", "neej", "nee"]
 #Identificatie
-print("Version: 1.0 Super Save Update")
+print("Version: 1.1 Super Save Update")
 print("Hey en welkom bij een stukje Code van Mohamed, hier test ik mijn skills in een 'fictief' spel")
 al = input("Heb je dit spel al eerder gespeeld? ")
 al = al.lower()
@@ -52,7 +52,7 @@ else:
       print("Oki je begint dus met {} MCoins" .format(geld))
 
   else:
-      geld = 1000
+      geld = 500
 
 while True:
   print("Je hebt nu {} MCoins" .format(geld))
@@ -128,7 +128,8 @@ while True:
           print("Je hebt geen geldig antwoord opgegeven!")
   #afsluit module
   elif testkeuze == "6":
-    print("In constructie")
+    print("Programma wordt afgesloten! Tot de volgende keer")
+    break
 
   elif testkeuze == "7":
     print("Done, check nu de JSON file")
