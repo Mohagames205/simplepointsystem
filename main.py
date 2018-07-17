@@ -133,6 +133,10 @@ while True:
 
   elif testkeuze == "7":
     print("Done, check nu de JSON file")
+
+  elif testkeuze == "8":
+      print("Het spel wordt opgestart momentje")
+
 #opslaag module
   data = {
       naam: {
