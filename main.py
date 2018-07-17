@@ -64,9 +64,11 @@ while True:
       print(" Je kan kiezen tussen de dingen hieronder: \n1. Bananen: 50$ \n2. Appels: 20$ \n3. Perzikken: 90$")
       aankoop = input("Je kan kiezen door het nummer in te typen: ")
 
+
       if aankoop == "1":
+          aantal = input("Hoeveel wilt u kopen?")
           geld = int(geld)
-          geld = geld - 50
+          geld = geld - 50 * int(aantal)
           geld = str(geld)
           print("Je hebt het gekocht! Je hebt nu {} MCoins over" .format(geld))
 
