@@ -7,58 +7,66 @@ negative = ["nope", "neen", "n", "no", "noppes", "neej", "nee"]
 # Identificatie
 print("Version: 1.1 Super Save Update")
 print("Hey en welkom bij een stukje Code van Mohamed, hier test ik mijn skills in een 'fictief' spel")
-al = input("Heb je dit spel al eerder gespeeld? ")
-al = al.lower()
-# prijzen van het eten
-banaan = 50
-appels = 20
-perzikken = 90
-if al in positive:
-    wbj = input("Wie ben jij dan? Typ je naam CORRECT In ")
-    with open("data.json", "r") as read_file:
-        bestand = json.load(read_file)
-    bestand = bestand[wbj]
-    geld = bestand["Geld"]
-    leeftijd = bestand["Leeftijd"]
-    naam = wbj
+a = True
+while a == True:
+  al = input("Heb je dit spel al eerder gespeeld? ")
+  al = al.lower()
+  # prijzen van het eten
+  banaan = 50
+  appels = 20
+  perzikken = 90
 
-else:
-    # registrering
-    naam = input("Hey, wat is je naam? ")
-    print("Oh hey {}, aangenaam kennis te maken!".format(naam))
-    leeftijd = input("Hoe oud ben jij {}? ".format(naam))
-    leeftijd = str(leeftijd)
-    antwoord = input(
-        "Oh dus even om zeker te zijn, jij bent " + naam + " en je bent " + leeftijd + " jaar oud, heb ik het juist? ")
-    antwoord = antwoord.lower()
+  if al in positive:
+    try:
+      wbj = input("Wie ben jij dan? Typ je naam CORRECT In ")
+      with open("data.json", "r") as read_file:
+          bestand = json.load(read_file)
+      bestand = bestand[wbj]
+      geld = bestand["Geld"]
+      leeftijd = bestand["Leeftijd"]
+      naam = wbj
+    except:
+      print("Gebruiker niet gevonden")
 
-    if antwoord in positive:
-        print("")
 
-    elif antwoord in negative:
-        edit = input("Oei dan zullen we je gegevens aanpassen. Wat wil je aanpassen? Je naam of je leeftijd? ")
-        edit = edit.lower()
-        naamk = ["mijn naam", "naam", "name", "my name"]
-        leeftijdk = ["mijn leeftijd", "leeftijd", "age", "my age", "hoe oud ik ben"]
-        if edit in naamk:
-            naam = input("Okay wat moet je naam dan zijn? ")
-            print("Je naam is succesvol aangepast naar {}".format(naam))
+  else:
+      # registrering
+      a = False
+      naam = input("Hey, wat is je naam? ")
+      print("Oh hey {}, aangenaam kennis te maken!".format(naam))
+      leeftijd = input("Hoe oud ben jij {}? ".format(naam))
+      leeftijd = str(leeftijd)
+      antwoord = input(
+          "Oh dus even om zeker te zijn, jij bent " + naam + " en je bent " + leeftijd + " jaar oud, heb ik het juist? ")
+      antwoord = antwoord.lower()
 
-        elif edit in leeftijdk:
-            leeftijd = input("Ok wat is je juiste leeftijd dan? ")
-            print("Je leeftijd is succesvol aangepast naar {}".format(leeftijd))
-        else:
-            print("Je hebt geen geldig antwoord opgegeven!")
+      if antwoord in positive:
+          print("")
 
-    print("Okay we gaan verder met het instellen van het spel!")
-    cheatkeuze = input("Zou jij cheat mode aan willen hebben of niet? ")
+      elif antwoord in negative:
+          edit = input("Oei dan zullen we je gegevens aanpassen. Wat wil je aanpassen? Je naam of je leeftijd? ")
+          edit = edit.lower()
+          naamk = ["mijn naam", "naam", "name", "my name"]
+          leeftijdk = ["mijn leeftijd", "leeftijd", "age", "my age", "hoe oud ik ben"]
+          if edit in naamk:
+              naam = input("Okay wat moet je naam dan zijn? ")
+              print("Je naam is succesvol aangepast naar {}".format(naam))
 
-    if cheatkeuze in positive:
-        geld = input("Oké typ het begin bedrag in: ")
-        print("Oki je begint dus met {} MCoins".format(geld))
+          elif edit in leeftijdk:
+              leeftijd = input("Ok wat is je juiste leeftijd dan? ")
+              print("Je leeftijd is succesvol aangepast naar {}".format(leeftijd))
+          else:
+              print("Je hebt geen geldig antwoord opgegeven!")
 
-    else:
-        geld = 500
+      print("Okay we gaan verder met het instellen van het spel!")
+      cheatkeuze = input("Zou jij cheat mode aan willen hebben of niet? ")
+
+      if cheatkeuze in positive:
+          geld = input("Oké typ het begin bedrag in: ")
+          print("Oki je begint dus met {} MCoins".format(geld))
+
+      else:
+          geld = 500
 
 while True:
     print("Je hebt nu {} MCoins".format(geld))
